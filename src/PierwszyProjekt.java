@@ -1,8 +1,18 @@
 import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
-
+/**
+ * G³ówna klasa odpowiedzialna za komunikacjê z u¿ytkownikiem
+ * 
+ * @author Jakub Nowak
+ *
+ */
 public class PierwszyProjekt {
+	/**
+	 * Metoda odczytuj¹ca dane z pliku i wyœwietlaj¹ca je u¿ytkownikowi
+	 * 
+	 * @throws IOException
+	 */
 	public static void obliczajZPliku() throws IOException {
 		File plik = new File("dzialania.txt");
 		Scanner odczyt = new Scanner(plik);
@@ -16,8 +26,11 @@ public class PierwszyProjekt {
 			int wynik = obliczanie.obliczDzialanie(rozdzielony_string);
 			System.out.println(dzialanie + "=" +wynik);
 		}
+		odczyt.close();
 	}
-	
+	/**
+	 *  Metoda pobieraj¹ca dane od u¿ytkownika i wyœwietlaj¹ca je po przetworzeniu
+	 */
 	public static void obliczajZKonsoli(){
 		String dzialanie = "/0";
 		System.out.println("Podawaj kolejno dzialania potwierdzajac je klawiszem ENTER, aby zakonczyc obliczanie wpisz zamiast dzialania 'Koniec'");
@@ -32,6 +45,11 @@ public class PierwszyProjekt {
 			System.out.println(dzialanie + "=" +wynik);
 		}
 	}
+	/**
+	 * Metoda wyœwietlaj¹ca menu u¿ytkownikowi
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		int wybor;
 		

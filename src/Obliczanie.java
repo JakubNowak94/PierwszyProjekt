@@ -1,5 +1,11 @@
 
 public class Obliczanie {
+	/**
+	 * Metoda obliczaj¹ca wartoœæ dzia³ania na podstawie podanych danych
+	 * 
+	 * @param dzialanie
+	 * @return wynik dzia³ania
+	 */
 	public static int obliczDzialanie(String[] dzialanie){
 		int wynik = 0;
 		int rozmiar_stringa = dzialanie.length;
@@ -64,7 +70,12 @@ public class Obliczanie {
 		}
 		return wynik;
 	}
-	
+	/**
+	 * Metoda rozdzielaj¹ca podanego stringa
+	 * 
+	 * @param dzialanie
+	 * @return tablica stringów zawieraj¹ca liczby lub znaki matematyczne
+	 */
 	public static String[] rozdzielStringa(String dzialanie){
 	//	String[] rozdzielenie = dzialanie.split("(?<=\\+)|(?=\\+)|(?<=\\-)|(?=\\-)|(?<=\\*)|(?=\\*)|(?<=\\/)|(?=\\/)|");
 		String[] rozdzielenie = dzialanie.split("(?=\\+)|(?<=\\+)|(?=\\-)|(?<=\\-)|(?=\\*)|(?<=\\*)|(?=\\/)|(?<=\\/)");
