@@ -1,8 +1,21 @@
 import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
 
 public class PierwszyProjekt {
-	public static void obliczajZPliku(){
-		System.out.println("Wybrales plik");
+	public static void obliczajZPliku() throws IOException {
+		File plik = new File("dzialania.txt");
+		Scanner odczyt = new Scanner(plik);
+		String dzialanie = "0";
+		while(true){
+			dzialanie = odczyt.nextLine();
+			if(dzialanie.equals("koniec")) break;
+            
+			Obliczanie obliczanie = new Obliczanie();
+			String[] rozdzielony_string = obliczanie.rozdzielStringa(dzialanie);
+			int wynik = obliczanie.obliczDzialanie(rozdzielony_string);
+			System.out.println(dzialanie + "=" +wynik);
+		}
 	}
 	
 	public static void obliczajZKonsoli(){
@@ -37,7 +50,12 @@ public class PierwszyProjekt {
 			break;
 			
 		case 2:
-			obliczajZPliku();
+			try {
+				obliczajZPliku();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
 			System.out.println("Koniec pracy programu");
 			break;
 			

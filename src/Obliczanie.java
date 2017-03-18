@@ -3,11 +3,6 @@ public class Obliczanie {
 	public static int obliczDzialanie(String[] dzialanie){
 		int wynik = 0;
 		int rozmiar_stringa = dzialanie.length;
-	//	String [] pomocniczy_string = dzialanie;
-		
-	//	for (String string : dzialanie) {
-	//		System.out.println(string);
-	//	}
 		
 		while (rozmiar_stringa!=1){
 			String [] pomocniczy_string = dzialanie;
@@ -39,10 +34,6 @@ public class Obliczanie {
 				
 			}
 			
-		//	for (String string : dzialanie2) {
-		//		System.out.println(string);
-		//	}
-			
 			String [] pomocniczy_string2 = dzialanie2;
 			for(int i = 0, j = 0; i < dzialanie2.length; i++, j++){
 				pomocniczy_string2[j] = dzialanie2[i];
@@ -64,15 +55,10 @@ public class Obliczanie {
 					j--;
 					rozmiar_stringa = rozmiar_stringa-2;
 				}
-			//	for (String string : pomocniczy_string2) {
-			//		System.out.println(string);
-			//	}
-			//	System.out.println(" ");
 			}
 			String [] dzialanie3 = new String[rozmiar_stringa];
 			for(int i = 0; i < rozmiar_stringa; i++){
 				dzialanie3[i] = pomocniczy_string2[i];
-				//System.out.println(dzialanie3[i]);
 			}
 			wynik = Integer.parseInt(dzialanie3[0]);
 		}
